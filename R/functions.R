@@ -204,11 +204,14 @@ color_analysis<- function(x){
 }
 
 #' function that allows you to pass alpha to a GG plot that also encodes other things
+
+#' @title Image Plot Export
 #' @description This function is designed to simplify passing arguments into a ggplot with geom_image to produce an image plot
 #' @param D is where the data is
 #' @param X is the X var
 #' @param Y is the Y var
 #' @param A is the alpha
+#' @export
 imageplot_output <-function(Q,X,Y,A){
   transparent <- function(img) {
     B <- paste(A, "*a", sep = "")
