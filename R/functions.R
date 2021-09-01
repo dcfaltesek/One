@@ -38,7 +38,7 @@ load_images <- function(y) {
 #'
 #' @examples
 #' load_images(here("Images/"))
-convert_and_import<-function(X){
+convert_and_import<-function(x){
   dir.create("converted")
   purrr::map(.x = x$local_path, .f=lower_converter)
   converted_images<<-data.frame(local_path= list.files("converted", full.names = TRUE), old_local_path = images$local_path)
