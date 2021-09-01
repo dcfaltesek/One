@@ -2,7 +2,7 @@
 % Please edit documentation in R/functions.R
 \name{imageplot_output}
 \alias{imageplot_output}
-\title{function that allows you to pass alpha to a GG plot that also encodes other things}
+\title{Image Plot Export}
 \usage{
 imageplot_output(Q, X, Y, A)
 }
@@ -17,4 +17,7 @@ imageplot_output(Q, X, Y, A)
 }
 \description{
 This function is designed to simplify passing arguments into a ggplot with geom_image to produce an image plot
+}
+\details{
+function that allows you to pass alpha to a GG plot that also encodes other things
 }
