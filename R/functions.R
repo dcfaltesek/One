@@ -216,7 +216,7 @@ imageplot_output <-function(Q,X,Y,A){
   transparent <- function(img) {
     B <- paste(A, "*a", sep = "")
     magick::image_fx(img, expression = B, channel = "alpha")}
-  G<-paste("ggplot(",Q, ",aes(",X,",",Y,"))+geom_image(image =",Q,"$local_path, image_fun=transparent)", sep = "")
+  G<-paste("ggplot(",Q, ",aes(",X,",",Y,"))+ggimage::geom_image(image =",Q,"$local_path, image_fun=transparent)", sep = "")
   eval(parse(text=G))}
 
 
