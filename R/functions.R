@@ -121,10 +121,10 @@ fluency <- function(image) {
 symmetry_analysis <- function(images) {
   ml_images<-images$local_path%>%
     purrr::map( ~ magick::image_read(.))
-  symmetry_images<<-purrr::map_df(1:length(ml_images), ~ data.frame(
+  symmetry_results<<-purrr::map_df(1:length(ml_images), ~ data.frame(
     a = .x,
     symmetry_lower(ml_images[[.x]])))
-  print(symmetry_images)
+  print(symmetry_results)
 }
 
 
