@@ -100,7 +100,7 @@ fluency <- function(image) {
     d = imagefluency::img_symmetry(fl_images[[.x]]),
     e = imagefluency::img_complexity(fl_images[[.x]])
   ))
-  fluency_results<<-dplyr::unique(fluency_results)
+  fluency_results<<-unique(fluency_results)
 }
 
 
