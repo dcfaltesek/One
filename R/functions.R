@@ -125,7 +125,6 @@ symmetry_analysis <- function(images) {
     a = .x,
     symmetry_lower(ml_images[[.x]])))
   print(symmetry_images)
-  print("analysis complete")
 }
 
 
@@ -155,7 +154,6 @@ thirds_images <- function(images) {
   thirds_results<-thirds_results_images%>%mutate(vert_focal = ifelse(low_hor>high_hor, "Low", "High"))
   thirds_results<<-thirds_results%>%mutate(hor_focal = ifelse(left_vert>right_vert, "Left", "Right"))
   print(thirds_results)
-  print("thirds analysis complete")
 }
 
 
@@ -202,7 +200,7 @@ color_analysis<- function(x){
   colors_results<-purrr::map_df(.x = c_images, .f=lower_colors)
   colors_results<<-colors_results%>%mutate(hue_region = ifelse(mean_blue>mean_red & mean_red >= mean_green, "Violet", ifelse(mean_blue>mean_red & mean_blue < mean_green, "Spring green",
                                                                                                                              ifelse(mean_green > mean_red & mean_red >= mean_blue, "Chartreuse", ifelse(mean_green > mean_red & mean_green > mean_blue, "Azure",
-            print("color analysis complete")                                                                                                                                                                                            ifelse(mean_red >= mean_green & mean_green >= mean_blue, "Orange", "Rose"))))))
+                                                                                                                                                                                                        ifelse(mean_red >= mean_green & mean_green >= mean_blue, "Orange", "Rose"))))))
 }
 
 #' function that allows you to pass alpha to a GG plot that also encodes other things
