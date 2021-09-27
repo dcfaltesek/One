@@ -93,13 +93,14 @@ measure_images <- function(images) {
 fluency <- function(image) {
   fl_images <- image$local_path %>%
     purrr::map( ~ imagefluency::img_read(.))
-  fluency_results <<- purrr::map_df(1:length(fl_images), ~ data.frame(
+  fluency_results <- purrr::map_df(1:length(fl_images), ~ data.frame(
     a = .x,
     b = imagefluency::img_contrast(fl_images[[.x]]),
     c = imagefluency::img_self_similarity(fl_images[[.x]]),
     d = imagefluency::img_symmetry(fl_images[[.x]]),
     e = imagefluency::img_complexity(fl_images[[.x]])
   ))
+  fluency_results<<-dplyr::distinct(fluency_results)
 }
 
 
