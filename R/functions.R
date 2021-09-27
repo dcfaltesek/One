@@ -268,7 +268,7 @@ low1 <- function(x){
 }
 high1 <- function(x){
 
-  rudy2 <- magick::image_canny(A)
+  rudy2 <- magick::image_canny(x)
   ZZZZ <- imager::magick2cimg(rudy2)
   ZZZZZ <- as.data.frame(ZZZZ)
   ZZZZZ <- ZZZZZ %>%
