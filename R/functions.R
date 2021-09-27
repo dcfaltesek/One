@@ -121,10 +121,10 @@ fluency <- function(image) {
 symmetry_analysis <- function(images) {
   ml_images<-images$local_path%>%
     purrr::map( ~ magick::image_read(.))
-  symmetry_results<<-purrr::map_df(1:length(ml_images), ~ data.frame(
+  symmetry_images<<-purrr::map_df(1:length(ml_images), ~ data.frame(
     a = .x,
     symmetry_lower(ml_images[[.x]])))
-  print(symmetry_results)
+  print(symmetry_images)
 }
 
 
@@ -178,7 +178,7 @@ edge_analysis <- function(images) {
   edged_R<-purrr::map_df(1:length(ml_images), ~ data.frame(
     a = .x,
     d = edge_lower(ml_images[[.x]])))
-  edged_results<<-dplyr::distinct(edged_R, a, .keep_all=TRUE)
+  edged_images<<-dplyr::distinct(edged_R, a, .keep_all=TRUE)
   print("edge analysis complete")
 }
 
