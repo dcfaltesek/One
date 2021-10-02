@@ -1,6 +1,6 @@
 ---
 title: "Readme2"
-author: "Bonnell, Faltesek, Gates, Lohberger"
+author: "Bonnell, Faltesek, Gates, Loberger"
 date: "9/1/2021"
 output: html_document
 ---
